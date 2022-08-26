@@ -28,6 +28,9 @@ results = cursor.fetchall()
 cursor.execute('''INSERT INTO (TG_message_id, TG_message_text, TG_message_is_deleted)
                            VALUES 
                            404, 'тест ыыыытест', 1 ''')
+
+SQLCommand = ("INSERT INTO tbl_employee(id,firstName, LastName, EmployeeId) VALUES (?,?,?,?)")    
+Values = [Id,firstname,LastName,RegisterNo]   
 connGG.commit()
 
 
