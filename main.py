@@ -3,10 +3,10 @@ import pyodbc
 
 
 connGG = pyodbc.connect('Driver={SQL SERVER};'
-                        'Server=10.110.10.29;'
+                        'Server=123;'
                         'Database=DB-TG;'
                         'UID=sa;'
-                        'PWD=Aa123456;')
+                        'PWD=;')
 
 
 cursor = connGG.cursor()
