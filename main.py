@@ -31,15 +31,14 @@ cursor.execute(useranon)
 SQLinsert = '''INSERT INTO useranon (Int_ID, TG_message_id, TG_message_text, TG_message_is_deleted, TG_message_is_forwarded, TG_message_is_file, TG_message_file_content)
                 VALUES (4,?,?,1,0,0,0);'''
 
-
 #cursor.execute('''INSERT INTO useranon (TG_message_id, TG_message_text, TG_message_is_deleted, TG_message_is_forwarded, TG_message_is_file, TG_message_file_content)
 #                VALUES (?,?,?,?,?,?);''')
 
 
 
-rows = cursor.fetchall() [0]
-for row in rows:
-    Int_ID = row(int[0])
+results  = cursor.fetchall() #[0]
+for row in results:
+    Int_ID = row[0]# row(int[0])
     TG_message_id = row[1]
     TG_message_text = row[2]
     TG_message_is_deleted = row[3]
@@ -49,8 +48,9 @@ for row in rows:
 
     values = (row[0], row[1], row[2], row[3], row[4], row[5], row[6])
 
+    print(Int_ID, TG_message_id, TG_message_text, TG_message_is_deleted, TG_message_is_forwarded, TG_message_is_file, TG_message_file_content)
 #    cursor.execute(SQLZapros)
-    cursor.execute(SQLinsert, rows, values)
+    cursor.execute(SQLinsert, results, values)
 
 
 connGG.commit()
